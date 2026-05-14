@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الشيف فارس - مطعم يمني فاخر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <script>
+      // Fix for the read-only fetch property issue in this environment
+      (function() {
+        if (typeof window !== 'undefined' && window.fetch) {
+          try {
+            const nativeFetch = window.fetch.bind(window);
+            
+            // Expose a safe apiFetch as requested
+            window.apiFetch = async function(...args) {
+              return nativeFetch(...args);
+            };
+
+            // Attempt to make fetch configurable and provide a setter to swallow 
+            // errors from libraries trying to overwrite it.
+            const descriptor = Object.getOwnPropertyDescriptor(window, 'fetch');
+            if (descriptor && (!descriptor.writable || !descriptor.set)) {
+              Object.defineProperty(window, 'fetch', {
+                get: function() { return nativeFetch; },
+                set: function(v) { 
+                  console.warn('Blocked attempt to overwrite read-only fetch property');
+                },
+                configurable: true,
+                enumerable: true
+              });
+            }
+          } catch (e) {
+            // If the property is truly non-configurable, define apiFetch as a fallback
+            window.apiFetch = async function(...args) {
+              return window.fetch(...args);
+            };
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

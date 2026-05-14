@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cairo", ui-serif, Georgia, serif;
+
+  --color-brand-bg: #11130F;
+  --color-brand-surface: #1A1D18;
+  --color-brand-surface-light: #23261F;
+  --color-brand-red: #9E1F1F;
+  --color-brand-red-dark: #7A1717;
+  --color-brand-gold: #D9B24C;
+  --color-brand-gold-soft: #E7C767;
+  --color-brand-text: #F5EBD7;
+  --color-brand-text-muted: #C9B89A;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Fluid Animation Classes */
+.transition-luxury {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Luxury Decorative Patterns */
+.yemeni-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30-30-30z' fill='%23D9B24C' fill-opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #d9b24c 0%, #b88a2d 100%);
+}
+
+.red-gradient {
+  background: linear-gradient(135deg, #9e1f1f 0%, #7a1717 100%);
+}
+
+.glass-card {
+  background: rgba(26, 29, 24, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(217, 178, 76, 0.15);
+}
+
+.gold-bloom {
+  box-shadow: 0 0 32px rgba(217, 178, 76, 0.12);
+}
+
+.cinematic-overlay {
+  background: linear-gradient(to top, rgba(17, 19, 15, 1) 0%, rgba(17, 19, 15, 0.3) 50%, rgba(17, 19, 15, 0.7) 100%);
+}
+
+.menu-dot {
+  border-bottom: 2px dotted #c9b89a;
+  flex-grow: 1;
+  margin: 0 12px;
+  opacity: 0.2;
+}
