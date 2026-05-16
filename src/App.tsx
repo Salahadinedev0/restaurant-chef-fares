@@ -1028,113 +1028,6 @@ export default function App() {
              <ChevronDown size={28} className="text-brand-gold/70" />
            </motion.div>
         </div>
-
-        {/* Floating WhatsApp */}
-        <a 
-          href="https://wa.me/23562666161" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`fixed bottom-28 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center ${lang === 'ar' ? 'left-8' : 'right-8'}`}
-        >
-          <MessageCircle size={32} fill="white" className="text-transparent" />
-        </a>
-
-        {/* Floating Cart Button */}
-        <motion.button
-          initial={{ scale: 0 }}
-          animate={{ scale: cartCount > 0 ? 1 : 0 }}
-          onClick={() => setIsCartOpen(true)}
-          className={`fixed bottom-8 z-50 red-gradient text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center ${lang === 'ar' ? 'left-8' : 'right-8'}`}
-        >
-          <ShoppingBag size={32} />
-          {cartCount > 0 && (
-            <span className="absolute -top-1 -right-1 bg-brand-gold text-brand-bg text-[10px] font-black w-6 h-6 rounded-full flex items-center justify-center border-2 border-brand-bg shadow-lg">
-              {cartCount}
-            </span>
-          )}
-        </motion.button>
-
-        {/* Cart Drawer */}
-        <AnimatePresence>
-          {isCartOpen && (
-            <>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setIsCartOpen(false)}
-                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
-              />
-              <motion.div
-                initial={{ x: lang === 'ar' ? -400 : 400 }}
-                animate={{ x: 0 }}
-                exit={{ x: lang === 'ar' ? -400 : 400 }}
-                className={`fixed top-0 bottom-0 ${lang === 'ar' ? 'left-0' : 'right-0'} w-full sm:w-[400px] bg-brand-bg z-[70] shadow-3xl flex flex-col`}
-              >
-                <div className={`p-6 border-b border-brand-gold/10 flex items-center justify-between ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
-                  <div className={`flex items-center gap-3 ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
-                    <ShoppingBag className="text-brand-gold" size={24} />
-                    <h2 className="text-xl font-black text-brand-text tracking-tight uppercase">{t.cart.title}</h2>
-                  </div>
-                  <button onClick={() => setIsCartOpen(false)} className="text-brand-text-muted hover:text-brand-gold transition-colors p-2">
-                    <X size={24} />
-                  </button>
-                </div>
-
-                <div className="flex-1 overflow-y-auto p-6 space-y-6">
-                  {cart.length === 0 ? (
-                    <div className="h-full flex flex-col items-center justify-center text-center opacity-40">
-                      <ShoppingBag size={64} className="mb-4 text-brand-gold/20" />
-                      <p className="font-bold text-brand-text-muted">{t.cart.empty}</p>
-                    </div>
-                  ) : (
-                    cart.map((item) => (
-                      <div key={item.name} className={`flex gap-4 p-4 glass-card rounded-2xl border border-white/5 ${lang === 'ar' ? 'flex-row-reverse text-right' : 'flex-row text-left'}`}>
-                        <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-brand-gold/10">
-                          <img src={item.image} className="w-full h-full object-cover" alt={item.name} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-black text-brand-text truncate mb-1">{item.name}</h4>
-                          <p className="text-brand-gold font-bold text-sm mb-3">{formatPrice(item.rawPrice)} {t.detailedMenu.currency}</p>
-                          <div className={`flex items-center justify-between ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
-                            <div className={`flex items-center gap-4 bg-white/5 rounded-lg border border-white/10 p-1 ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
-                              <button onClick={() => updateQuantity(item.name, -1)} className="p-1 hover:text-brand-gold transition-colors">
-                                <Minus size={14} />
-                              </button>
-                              <span className="font-black text-sm w-4 text-center">{item.quantity}</span>
-                              <button onClick={() => updateQuantity(item.name, 1)} className="p-1 hover:text-brand-gold transition-colors">
-                                <Plus size={14} />
-                              </button>
-                            </div>
-                            <button onClick={() => removeFromCart(item.name)} className="text-brand-red p-2 hover:bg-brand-red/10 rounded-lg transition-all">
-                              <Trash2 size={18} />
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    ))
-                  )}
-                </div>
-
-                {cart.length > 0 && (
-                  <div className="p-6 border-t border-brand-gold/10 bg-brand-surface-light/50 backdrop-blur-xl">
-                    <div className={`flex justify-between items-center mb-6 ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <span className="font-bold text-brand-text-muted">{t.cart.total}</span>
-                      <span className="text-2xl font-black text-brand-gold tracking-tighter">{formatPrice(cartTotal)} {t.detailedMenu.currency}</span>
-                    </div>
-                    <button 
-                      onClick={handleCheckout}
-                      className="w-full red-gradient text-white py-4 rounded-xl font-black shadow-2xl flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 transition-luxury uppercase tracking-widest text-sm"
-                    >
-                      <MessageCircle size={20} fill="white" className="text-transparent" />
-                      {t.cart.checkout}
-                    </button>
-                  </div>
-                )}
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
       </section>
 
       {/* Offer of the Day */}
@@ -1186,7 +1079,7 @@ export default function App() {
                >
                   <span className="flex items-center justify-center gap-3">
                     {t.offerDay.cta}
-                    <ArrowRight size={20} className={lang === 'ar' ? 'rotate-180 group-hover:-translate-x-2' : 'group-hover:translate-x-2'} />
+                    <Plus size={20} />
                   </span>
                </button>
              </div>
@@ -1284,9 +1177,12 @@ export default function App() {
                          <span className="text-brand-gold font-black text-lg sm:text-xl tracking-tighter">{formatPrice(item.rawPrice || 0)}</span>
                          <span className="text-[10px] font-bold opacity-30 uppercase tracking-widest">{t.detailedMenu.currency}</span>
                       </div>
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-brand-gold text-brand-bg p-2 rounded-lg shadow-xl">
+                      <button 
+                        onClick={(e) => { e.stopPropagation(); addToCart(item); }}
+                        className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity bg-brand-gold text-brand-bg p-2 rounded-lg shadow-xl active:scale-90"
+                      >
                         <Plus size={16} />
-                      </div>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -1314,7 +1210,15 @@ export default function App() {
                       <div className={`flex items-center ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
                         <h4 className="font-bold text-brand-text group-hover:text-brand-gold transition-colors">{item.name}</h4>
                         <div className="menu-dot opacity-40"></div>
-                        <span className="text-brand-gold font-bold text-sm whitespace-nowrap">{formatPrice(item.rawPrice || 0)} {t.detailedMenu.currency}</span>
+                        <div className={`flex items-center gap-3 ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
+                          <span className="text-brand-gold font-bold text-sm whitespace-nowrap">{formatPrice(item.rawPrice || 0)} {t.detailedMenu.currency}</span>
+                          <button 
+                            onClick={(e) => { e.stopPropagation(); addToCart(item); }}
+                            className="bg-brand-gold text-brand-bg p-1 rounded-md shadow-md hover:scale-110 active:scale-90 transition-transform"
+                          >
+                            <Plus size={14} />
+                          </button>
+                        </div>
                       </div>
                       <p className="text-brand-text-muted text-[10px] mt-1">{item.desc}</p>
                     </div>
@@ -1337,8 +1241,9 @@ export default function App() {
                     <span className="text-4xl font-black text-brand-gold block mb-8">{formatPrice(4500)} <span className="text-sm uppercase opacity-60">{t.detailedMenu.currency}</span></span>
                     <button 
                       onClick={(e) => { e.stopPropagation(); addToCart(menuItems.dessert[0]); }}
-                      className="bg-brand-gold text-brand-bg px-8 py-3 rounded-xl font-black transition-luxury shadow-2xl hover:brightness-110 active:scale-95 uppercase tracking-widest text-xs"
+                      className="bg-brand-gold text-brand-bg px-8 py-3 rounded-xl font-black transition-luxury shadow-2xl hover:brightness-110 active:scale-95 uppercase tracking-widest text-xs flex items-center justify-center gap-2 mx-auto"
                     >
+                      <Plus size={18} />
                       {t.cart.add}
                     </button>
                  </div>
@@ -1676,6 +1581,113 @@ export default function App() {
             post={selectedBlogPost}
             onBack={() => setView('blog')}
           />
+        )}
+      </AnimatePresence>
+
+      {/* Floating WhatsApp */}
+      <a 
+        href="https://wa.me/23562666161" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed bottom-28 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center ${lang === 'ar' ? 'left-8' : 'right-8'}`}
+      >
+        <MessageCircle size={32} fill="white" className="text-transparent" />
+      </a>
+
+      {/* Floating Cart Button */}
+      <motion.button
+        initial={{ scale: 0 }}
+        animate={{ scale: cartCount > 0 ? 1 : 0 }}
+        onClick={() => setIsCartOpen(true)}
+        className={`fixed bottom-8 z-50 red-gradient text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center ${lang === 'ar' ? 'left-8' : 'right-8'}`}
+      >
+        <ShoppingBag size={32} />
+        {cartCount > 0 && (
+          <span className="absolute -top-1 -right-1 bg-brand-gold text-brand-bg text-[10px] font-black w-6 h-6 rounded-full flex items-center justify-center border-2 border-brand-bg shadow-lg">
+            {cartCount}
+          </span>
+        )}
+      </motion.button>
+
+      {/* Cart Drawer */}
+      <AnimatePresence>
+        {isCartOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsCartOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
+            />
+            <motion.div
+              initial={{ x: lang === 'ar' ? -400 : 400 }}
+              animate={{ x: 0 }}
+              exit={{ x: lang === 'ar' ? -400 : 400 }}
+              className={`fixed top-0 bottom-0 ${lang === 'ar' ? 'left-0' : 'right-0'} w-full sm:w-[400px] bg-brand-bg z-[70] shadow-3xl flex flex-col`}
+            >
+              <div className={`p-6 border-b border-brand-gold/10 flex items-center justify-between ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
+                <div className={`flex items-center gap-3 ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
+                  <ShoppingBag className="text-brand-gold" size={24} />
+                  <h2 className="text-xl font-black text-brand-text tracking-tight uppercase">{t.cart.title}</h2>
+                </div>
+                <button onClick={() => setIsCartOpen(false)} className="text-brand-text-muted hover:text-brand-gold transition-colors p-2">
+                  <X size={24} />
+                </button>
+              </div>
+
+              <div className="flex-1 overflow-y-auto p-6 space-y-6">
+                {cart.length === 0 ? (
+                  <div className="h-full flex flex-col items-center justify-center text-center opacity-40">
+                    <ShoppingBag size={64} className="mb-4 text-brand-gold/20" />
+                    <p className="font-bold text-brand-text-muted">{t.cart.empty}</p>
+                  </div>
+                ) : (
+                  cart.map((item) => (
+                    <div key={item.name} className={`flex gap-4 p-4 glass-card rounded-2xl border border-white/5 ${lang === 'ar' ? 'flex-row-reverse text-right' : 'flex-row text-left'}`}>
+                      <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-brand-gold/10">
+                        <img src={item.image} className="w-full h-full object-cover" alt={item.name} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-black text-brand-text truncate mb-1">{item.name}</h4>
+                        <p className="text-brand-gold font-bold text-sm mb-3">{formatPrice(item.rawPrice)} {t.detailedMenu.currency}</p>
+                        <div className={`flex items-center justify-between ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
+                          <div className={`flex items-center gap-4 bg-white/5 rounded-lg border border-white/10 p-1 ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
+                            <button onClick={() => updateQuantity(item.name, -1)} className="p-1 hover:text-brand-gold transition-colors">
+                              <Minus size={14} />
+                            </button>
+                            <span className="font-black text-sm w-4 text-center">{item.quantity}</span>
+                            <button onClick={() => updateQuantity(item.name, 1)} className="p-1 hover:text-brand-gold transition-colors">
+                              <Plus size={14} />
+                            </button>
+                          </div>
+                          <button onClick={() => removeFromCart(item.name)} className="text-brand-red p-2 hover:bg-brand-red/10 rounded-lg transition-all">
+                            <Trash2 size={18} />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+
+              {cart.length > 0 && (
+                <div className="p-6 border-t border-brand-gold/10 bg-brand-surface-light/50 backdrop-blur-xl">
+                  <div className={`flex justify-between items-center mb-6 ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
+                    <span className="font-bold text-brand-text-muted">{t.cart.total}</span>
+                    <span className="text-2xl font-black text-brand-gold tracking-tighter">{formatPrice(cartTotal)} {t.detailedMenu.currency}</span>
+                  </div>
+                  <button 
+                    onClick={handleCheckout}
+                    className="w-full red-gradient text-white py-4 rounded-xl font-black shadow-2xl flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 transition-luxury uppercase tracking-widest text-sm"
+                  >
+                    <MessageCircle size={20} fill="white" className="text-transparent" />
+                    {t.cart.checkout}
+                  </button>
+                </div>
+              )}
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </div>
