@@ -64,8 +64,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
   main: [
     { 
       name: lang === 'ar' ? 'خروف كامل ملكي' : 'Agneau Royal Entier', 
-      price: '١٤,٠٠٠', 
-      rawPrice: 14000, 
+      price: '70 000', 
+      rawPrice: 70000, 
       desc: lang === 'ar' ? 'وليمة ملكية فاخرة تُحضر بأجود أنواع اللحم اليمني' : 'Banquet royal préparé avec la meilleure viande yéménite', 
       longDesc: lang === 'ar' 
         ? 'خروف كامل يُطهى ببطء في أفران المندي التقليدية لساعات طويلة حتى يذوب اللحم عن العظم. يُقدم مع أرز المندي الفاخر المزين بالمكسرات والزبيب والكبدة، وهي الوجبة المثالية للمناسبات الكبيرة.' 
@@ -77,8 +77,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'مندي لحم بلدي' : 'Mandi d\'Agneau Fermier', 
-      price: '٩,٥٠٠', 
-      rawPrice: 9500, 
+      price: '6 000', 
+      rawPrice: 6000, 
       desc: lang === 'ar' ? 'لحم تيس بلدي مطهو ببطء في حفرة المندي التقليدية' : 'Agneau fermier cuit lentement dans un four traditionnel Mandi', 
       longDesc: lang === 'ar'
         ? 'طبق المندي الأصيل يُعد بتتبيلة خاصة، ويُطهى اللحم مع الأرز في حفرة تحت الأرض محكمة الإغلاق، مما يمنحه نكهة مدخنة فريدة لا تُقاوم.'
@@ -88,8 +88,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'مندي دجاج' : 'Mandi au Poulet', 
-      price: '١,٢٠٠', 
-      rawPrice: 1200, 
+      price: '6 000', 
+      rawPrice: 6000, 
       desc: lang === 'ar' ? 'دجاج مطهو ببطء في حفرة المندي مع الأرز المعطر' : 'Poulet fumé cuit dans un four traditionnel avec riz parfumé', 
       longDesc: lang === 'ar'
         ? 'طبق المندي الشهير يُعد بتتبيلة خاصة من الكركم والهيل، ويُطهى الدجاج مع الأرز في حفرة تحت الأرض محكمة الإغلاق، مما يمنحه نكهة مدخنة فريدة لا تُقاوم.'
@@ -99,8 +99,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'مظبي لحم' : 'Madhbi d\'Agneau', 
-      price: '١,٥٠٠', 
-      rawPrice: 1500, 
+      price: '3 000', 
+      rawPrice: 3000, 
       desc: lang === 'ar' ? 'لحم مشوي على أحجار المرو الساخنة' : 'Viande grillée sur des pierres volcaniques chaudes', 
       longDesc: lang === 'ar'
         ? 'طريقة تقليدية عريقة في الطهي، حيث يتم شي اللحم على أحجار المرو النظيفة بعد تسخينها جيداً، مما يجعل اللحم مقرمشاً من الخارج وطرياً جداً من الداخل.'
@@ -112,8 +112,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
   breakfast: [
     { 
       name: lang === 'ar' ? 'معصوب ملكي' : 'Masoub Royal', 
-      price: '٧٥٠', 
-      rawPrice: 750, 
+      price: '5 000', 
+      rawPrice: 5000, 
       desc: lang === 'ar' ? 'مزيج من الموز والخبز والعسل والقشطة' : 'Mélange de bananes, pain, miel et crème', 
       longDesc: lang === 'ar'
         ? 'وجبة الفطور اليمنية الأكثر شعبية، تتكون من الموز والخبز الأسمر المهروس جيداً، ويُضاف إليه القشطة الطازجة والعسل الطبيعي وحبة البركة لإعطاء طاقة قصوى ليومك.'
@@ -125,8 +125,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
   appetizers: [
     { 
       name: lang === 'ar' ? 'شفوت يمني' : 'Shafoot Yéménite', 
-      price: '٣٥٠', 
-      rawPrice: 350, 
+      price: '1 500', 
+      rawPrice: 1500, 
       desc: lang === 'ar' ? 'خبز لحوح مسقى باللبن والكزبرة والثوم' : 'Pain Lahouh imbibé de yaourt épicé, coriandre et ail', 
       longDesc: lang === 'ar'
         ? 'المقبلات رقم واحد في المائدة اليمنية، يُحضر من خبز اللحوح اليمني الهش الذي يُسقى بخليط اللبن الطازج المخفوق مع الكزبرة والنعناع والثوم والفلفل الأخضر.'
@@ -138,8 +138,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
   drinks: [
     { 
       name: lang === 'ar' ? 'شاي عدني' : 'Thé Adeni', 
-      price: '١٥٠', 
-      rawPrice: 150, 
+      price: '500', 
+      rawPrice: 500, 
       desc: lang === 'ar' ? 'شاي بالحليب والبهارات (هيل، قرنفل، زنجبيل)' : 'Thé au lait et aux épices (cardamome, clou de jovle, gingembre)', 
       longDesc: lang === 'ar'
         ? 'شاي كرك على الطريقة العدنية الأصيلة، يُغلى الشاي مع الحليب المركز ومجموعة من البهارات العطرية مثل الهيل والقرنفل والقرفة والقليل من الزنجبيل الطازج.'
@@ -149,8 +149,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'عصير برتقال طازج' : 'Jus d\'Orange Frais', 
-      price: '٤٥٠', 
-      rawPrice: 450, 
+      price: '1 000', 
+      rawPrice: 1000, 
       desc: lang === 'ar' ? 'عصير برتقال طبيعي ١٠٠٪' : 'Jus d\'orange 100% naturel pressé à froid', 
       longDesc: lang === 'ar'
         ? 'عصير برتقال طازج يتم تحضيره عند الطلب لضمان أعلى جودة وطعم منعش غني بفيتامين سي.'
@@ -160,8 +160,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'عصير مانجو' : 'Jus de Mangue', 
-      price: '٥٠٠', 
-      rawPrice: 500, 
+      price: '1 000', 
+      rawPrice: 1000, 
       desc: lang === 'ar' ? 'عصير مانجو طبيعي كثيف ولذيذ' : 'Jus de mangue naturel onctueux et savoureux', 
       longDesc: lang === 'ar'
         ? 'عصير مانجو طبيعي محضر من أجود أنواع المانجو اليمني الشهير بحلاوته وكثافته.'
@@ -171,8 +171,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'ليمون بالنعناع' : 'Citronnade à la Menthe', 
-      price: '٤٠٠', 
-      rawPrice: 400, 
+      price: '1 000', 
+      rawPrice: 1000, 
       desc: lang === 'ar' ? 'مزيج منعش من الليمون والنعناع الطازج' : 'Mélange rafraîchissant de citron et menthe fraîche', 
       longDesc: lang === 'ar'
         ? 'المشروب المنعش المثالي بعد وجبة دسمة، مزيج متوازن من الليمون الحامض والنعناع الأخضر البارد.'
@@ -182,8 +182,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'ماء معدني' : 'Eau Minérale', 
-      price: '١٠٠', 
-      rawPrice: 100, 
+      price: '500', 
+      rawPrice: 500, 
       desc: lang === 'ar' ? 'زجاجة ماء نقي' : 'Bouteille d\'eau minérale pure', 
       longDesc: lang === 'ar' ? 'ماء معدني نقي ومنعش.' : 'Eau minérale naturelle pure et fraîche.',
       ingredients: lang === 'ar' ? ['ماء'] : ['Eau'],
@@ -191,8 +191,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'شاي بالنعناع' : 'Thé à la Menthe', 
-      price: '٢٠٠', 
-      rawPrice: 200, 
+      price: '500', 
+      rawPrice: 500, 	
       desc: lang === 'ar' ? 'شاي أخضر منعش مع النعناع' : 'Thé vert rafraîchissant à la menthe', 
       longDesc: lang === 'ar' ? 'شاي أخضر منعش محضر من أوراق النعناع الطازجة.' : 'Thé vert infusé avec des feuilles de menthe fraîche pour une saveur délicate et rafraîchissante.',
       ingredients: lang === 'ar' ? ['شاي أخضر', 'نعناع طازج'] : ['Thé vert', 'Menthe fraîche'],
@@ -200,8 +200,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
     },
     { 
       name: lang === 'ar' ? 'قهوة يمنية' : 'Café Yéménite', 
-      price: '٣٠٠', 
-      rawPrice: 300, 
+      price: '500', 
+      rawPrice: 500, 	
       desc: lang === 'ar' ? 'قهوة يمنية أصيلة مع القشر والبهارات' : 'Café yéménite authentique avec épices', 
       longDesc: lang === 'ar' ? 'قهوة يمنية تقليدية محضرة من أجود أنواع البن اليمني مع القشر والهيل والقرفة.' : 'Café yéménite traditionnel (Qishr) préparé avec de la peau de café, du gingembre et des épices aromatiques.',
       ingredients: lang === 'ar' ? ['بن يمني', 'قشر', 'هيل', 'قرفة'] : ['Café yéménite', 'Qishr', 'Cardamome', 'Cannelle'],
@@ -212,8 +212,8 @@ export const GET_MENU_ITEMS = (lang: Language): Record<string, MenuItem[]> => ({
   dessert: [
     {
       name: lang === 'ar' ? 'حلويات يمنية فاخرة' : 'Douceurs Yéménites de Luxe',
-      price: '٤,٥٠٠',
-      rawPrice: 4500,
+      price: '25 000',
+      rawPrice: 25000,
       desc: lang === 'ar' ? 'مزيج من العسل الطبيعي والمكسرات الفاخرة' : 'Un mélange de miel naturel et de noix de premier choix',
       longDesc: lang === 'ar'
         ? 'تشكيلة فاخرة من الحلويات اليمنية التقليدية المحضرة بأجود أنواع عسل السدر واللوز والفستق المنقاة بعناية. تضم المجموعة الرواني، والصحن، والبقلاوة اليمنية بطابع ملكي.'

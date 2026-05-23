@@ -909,7 +909,7 @@ export default function App() {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const formatPrice = (price: number) => {
-    return price.toLocaleString(lang === 'ar' ? 'ar-TD' : 'fr-TD').replace(/\u00A0/g, ' ');
+    return price.toLocaleString('fr-FR').replace(/\u00A0/g, ' ');
   };
 
   const handleCheckout = () => {
@@ -1238,7 +1238,7 @@ export default function App() {
                  <div className="relative z-10 text-center">
                     <h4 className="text-3xl font-black text-brand-text mb-4 group-hover:text-brand-gold transition-colors">{t.detailedMenu.dessertPromoTitle}</h4>
                     <p className="text-brand-text-muted mb-6">{t.detailedMenu.dessertPromoDesc}</p>
-                    <span className="text-4xl font-black text-brand-gold block mb-8">{formatPrice(4500)} <span className="text-sm uppercase opacity-60">{t.detailedMenu.currency}</span></span>
+                    <span className="text-4xl font-black text-brand-gold block mb-8">{formatPrice(25000)} <span className="text-sm uppercase opacity-60">{t.detailedMenu.currency}</span></span>
                     <button 
                       onClick={(e) => { e.stopPropagation(); addToCart(menuItems.dessert[0]); }}
                       className="bg-brand-gold text-brand-bg px-8 py-3 rounded-xl font-black transition-luxury shadow-2xl hover:brightness-110 active:scale-95 uppercase tracking-widest text-xs flex items-center justify-center gap-2 mx-auto"

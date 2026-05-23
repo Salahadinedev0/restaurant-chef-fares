@@ -22,9 +22,9 @@ export const TRANSLATIONS = {
       badge: 'الأكثر طلباً',
       name: 'مندي لحم بلدي فاخر',
       desc: 'لحم تيس بلدي مطهو ببطء في حفرة المندي التقليدية مع أرز بسمتي طويل الحبة معطر بالزعفران والبهارات اليمنية الأصيلة. يُقدم مع سحاوق وجبنة.',
-      price: '٩,٥٠٠',
+      price: '6 000',
       currency: 'FCFA',
-      oldPrice: '١٢,٠٠٠',
+      oldPrice: '12 000',
       cta: 'أضف إلى الطلب',
     },
     categories: {
@@ -72,7 +72,7 @@ export const TRANSLATIONS = {
       dessertTitle: 'الحلويات والمشروبات',
       dessertPromoTitle: 'حلويات يمنية فاخرة',
       dessertPromoDesc: 'مزيج من العسل الطبيعي والمكسرات الفاخرة',
-      dessertPromoPrice: '٤,٥٠٠',
+      dessertPromoPrice: '25 000',
       dessertPromoCTA: 'اطلب المزيد'
     },
     dishDetail: {
@@ -91,8 +91,8 @@ export const TRANSLATIONS = {
       family: {
         title: 'وجبة العائلة الكبرى',
         desc: 'تخفيض ٢٥٪ على جميع صواني المندي والمظبي العائلية. وفر الكثير اليوم عند الطلب.',
-        old: '٦٠,٠٠٠ FCFA',
-        new: '٤٥,٠٠٠ FCFA',
+        old: '60 000 FCFA',
+        new: '45 000 FCFA',
         cta: 'حجز العرض'
       },
     },
@@ -111,17 +111,17 @@ export const TRANSLATIONS = {
         fullLamb: {
           name: 'صينية الخروف الملكي الكامل',
           desc: 'خروف كامل مطهو ببطء، يُقدم على فرش ضخم من الأرز البسمتي الفاخر، مزين بالكبد والمكسرات والزبيب.',
-          price: '١٣٥,٠٠٠'
+          price: '135 000'
         },
         halfLamb: {
           name: 'صينية نصف الخروف الملكي',
           desc: 'نصف خروف مندي أو مظبي حسب اختياركم، مع أرز المندي الموزوز والصلصات الحارة.',
-          price: '٧٠,٠٠٠'
+          price: '70 000'
         },
         mixedGrill: {
           name: 'صينية المشاوي العائلية الكبرى',
           desc: 'تشكيلة فاخرة من الكباب، الشيش طاووق، وريش الغنم، تُقدم مع الخبز والصلصات والمقبلات.',
-          price: '٤٥,٠٠٠'
+          price: '45 000'
         }
       }
     },
@@ -145,10 +145,10 @@ export const TRANSLATIONS = {
     },
     contact: {
       title: 'اتصل بنا',
-      desc: 'نحن هنا لخدمتكم وتلبية تطلعاتكم في أي وقت. تفضل بزيارتنا في كليمات، أنجمينا - تشاد.',
+      desc: 'نحن هنا لخدمتكم وتلبية تطلعاتكم في أي وقت. تفضل بزيارتنا في شارع التهنية، أنجمينا - تشاد.',
       contactTitle: 'معلومات الاتصال',
       addressTitle: 'العنوان',
-      addressName: 'كليمات، أنجمينا - تشاد',
+      addressName: 'شارع التهنية، أنجمينا - تشاد',
       hoursTitle: 'ساعات العمل',
       hoursName: 'يومياً: ١٢:٠٠ ظهراً - ١٢:٠٠ منتصف الليل',
       phoneTitle: 'الهاتف / واتساب',
@@ -188,7 +188,7 @@ export const TRANSLATIONS = {
       badge: 'Plat Signature',
       name: 'Mandi d\'Agneau Fermier Royale',
       desc: 'Agneau fermier cuit lentement dans un four traditionnel Mandi avec du riz basmati long grain parfumé au safran et aux épices yéménites authentiques. Servi avec sa sauce Sahawaq.',
-      price: '9 500',
+      price: '6 000',
       currency: 'FCFA',
       oldPrice: '12 000',
       cta: 'Commander',
@@ -238,7 +238,7 @@ export const TRANSLATIONS = {
       dessertTitle: 'Desserts & Boissons',
       dessertPromoTitle: 'Douceurs Yéménites de Luxe',
       dessertPromoDesc: 'Un mélange de miel naturel et de noix de premier choix',
-      dessertPromoPrice: '4 500',
+      dessertPromoPrice: '25 000',
       dessertPromoCTA: 'Découvrir plus'
     },
     dishDetail: {
@@ -257,8 +257,8 @@ export const TRANSLATIONS = {
       family: {
         title: 'Menu Famille Royale',
         desc: 'Réduction de 25% sur tous nos plats familiaux Mandi et Madhbi. Économisez 15.000 FCFA aujourd\'hui.',
-        old: '60.000 FCFA',
-        new: '45.000 FCFA',
+        old: '60 000 FCFA',
+        new: '45 000 FCFA',
         cta: 'Réserver l\'offre'
       },
     },
@@ -311,10 +311,10 @@ export const TRANSLATIONS = {
     },
     contact: {
       title: 'Contactez-Nous',
-      desc: 'Nous sommes là pour vous servir. Rendez-vous à Klemat, N\'Djamena - Tchad pour une expérience culinaire inoubliable.',
+      desc: 'Nous sommes là pour vous servir. Rendez-vous à Rue Tahnia, N\'Djamena - Tchad pour une expérience culinaire inoubliable.',
       contactTitle: 'Informations de Contact',
       addressTitle: 'Adresse',
-      addressName: 'Klemat, N\'Djamena - Tchad',
+      addressName: 'Rue Tahnia, N\'Djamena - Tchad',
       hoursTitle: 'Horaires',
       hoursName: 'Quotidien : 12:00 - 00:00',
       phoneTitle: 'Téléphone / WhatsApp',
